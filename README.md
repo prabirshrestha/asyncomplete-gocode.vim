@@ -7,9 +7,12 @@ via [gocode](https://github.com/nsf/gocode)
 ### Installing
 
 ```vim
+Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-gocode.vim'
 ```
+
+`async.vim` is required.
 
 #### Registration
 
