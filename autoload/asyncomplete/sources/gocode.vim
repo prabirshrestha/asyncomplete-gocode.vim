@@ -13,9 +13,6 @@ function! asyncomplete#sources#gocode#completor(opt, ctx) abort
 
     let l:kw = matchstr(l:typed, '\v\S+$')
     let l:kwlen = len(l:kw)
-    if l:kwlen < 1
-        return
-    endif
 
     let s:counter += 1
     let l:file = s:write_buffer_to_tempfile(a:ctx, s:counter)
