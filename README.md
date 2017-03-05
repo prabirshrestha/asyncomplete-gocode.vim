@@ -17,14 +17,14 @@ Plug 'prabirshrestha/asyncomplete-gocode.vim'
 #### Registration
 
 ```vim
-call asyncomplete#register_source({
+call asyncomplete#register_source(asyncomplete#sources#gocode#get_source_options({
     \ 'name': 'gocode',
     \ 'whitelist': ['go'],
     \ 'completor': function('asyncomplete#sources#gocode#completor'),
     \ 'config': {
     \    'gocode_path': expand('~/go/bin/gocode')
     \  },
-    \ })
+    \ }))
 ```
 
 Note: `config` is optional. `gocode_path` defaults to `gocode` i.e., `gocode` binary should exist in the `PATH` if config is not specified.

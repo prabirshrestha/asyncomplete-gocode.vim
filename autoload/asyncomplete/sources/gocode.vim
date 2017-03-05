@@ -5,6 +5,13 @@ let s:startcol = 0
 let s:counter = 0
 let s:counter_tempfiles = {}
 let s:job_counter_mappings = {}
+
+function! asyncomplete#sources#gocode#get_source_options(opts)
+    return extend(extend({}, a:opts), {
+            \ 'refresh_pattern': '\(\k\+$\|\.$\)',
+            \ })
+endfunction
+
 function! asyncomplete#sources#gocode#completor(opt, ctx) abort
     let l:matches = []
 
