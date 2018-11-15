@@ -37,7 +37,7 @@ function! s:on_exec_events(info, id, data, event) abort
 endfunction
 
 function! s:write_buffer_to_tempfile(ctx) abort
-    let l:buf = getline(a:ctx['bufnr'], '$')
+    let l:buf = getbufline(a:ctx['bufnr'], 1, '$')
     if &encoding !=? 'utf-8'
         let l:buf = map(l:buf, 'iconv(v:val, &encoding, "utf-8")')
     endif
